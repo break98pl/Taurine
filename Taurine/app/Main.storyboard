@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="veQ-yo-6fF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="veQ-yo-6fF">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +30,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="WbW-qe-Jvb">
-                                <rect key="frame" x="51.5" y="-1.5" width="217" height="571"/>
+                                <rect key="frame" x="51.5" y="-52.5" width="217" height="673"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="Wordmark" translatesAutoresizingMaskIntoConstraints="NO" id="GFS-FH-Vl3">
                                         <rect key="frame" x="0.0" y="0.0" width="217" height="0.0"/>
@@ -646,7 +646,7 @@
                                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
                                                                             </imageView>
                                                                             <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FRP-kA-Tb7">
-                                                                                <rect key="frame" x="15" y="10" width="187" height="24"/>
+                                                                                <rect key="frame" x="15" y="11" width="187" height="22"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1833,6 +1833,48 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ru-Bc-Duo">
+                                        <rect key="frame" x="0.0" y="613" width="217" height="60"/>
+                                        <subviews>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKP-By-n64">
+                                                <rect key="frame" x="0.0" y="0.0" width="217" height="60"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wgZ-fU-BsP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="217" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </view>
+                                                <blurEffect style="light"/>
+                                            </visualEffectView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ty-Zd-dtM" customClass="ProgressButton" customModule="Taurine" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="217" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Zwr-4R-emS"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="jvb-dJ-OJ3"/>
+                                                </constraints>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="restoreVnode" destination="BYZ-38-t0r" eventType="touchUpInside" id="GYs-sV-ilm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.19788099319999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tKP-By-n64" firstAttribute="top" secondItem="9ru-Bc-Duo" secondAttribute="top" id="9AY-OM-602"/>
+                                            <constraint firstItem="tKP-By-n64" firstAttribute="leading" secondItem="9ru-Bc-Duo" secondAttribute="leading" id="JQY-yd-zNG"/>
+                                            <constraint firstAttribute="bottom" secondItem="3ty-Zd-dtM" secondAttribute="bottom" id="L1O-NE-EPF"/>
+                                            <constraint firstAttribute="trailing" secondItem="3ty-Zd-dtM" secondAttribute="trailing" id="M1m-sO-jTl"/>
+                                            <constraint firstItem="3ty-Zd-dtM" firstAttribute="top" secondItem="9ru-Bc-Duo" secondAttribute="top" id="XAz-FA-sN8"/>
+                                            <constraint firstAttribute="trailing" secondItem="tKP-By-n64" secondAttribute="trailing" id="gLT-eq-tUV"/>
+                                            <constraint firstItem="3ty-Zd-dtM" firstAttribute="leading" secondItem="9ru-Bc-Duo" secondAttribute="leading" id="lnv-uk-vuJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="tKP-By-n64" secondAttribute="bottom" id="uMG-b9-EFf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ars-hm-x9N">
@@ -1941,6 +1983,7 @@
                         <outlet property="mountButton" destination="jfp-dO-s44" id="8zs-GV-x2G"/>
                         <outlet property="nonceSetter" destination="RfT-Ui-kZh" id="WnP-Yj-mMY"/>
                         <outlet property="restoreRootfsSwitch" destination="PpH-mo-4w2" id="nD5-ph-N6J"/>
+                        <outlet property="restoreVnodeButton" destination="3ty-Zd-dtM" id="ug9-kh-1X9"/>
                         <outlet property="scrollView" destination="mc5-wg-Z0Q" id="41c-n1-9ff"/>
                         <outlet property="stackView" destination="WbW-qe-Jvb" id="cko-mt-L9f"/>
                         <outlet property="switchesView" destination="aA7-s2-ZrJ" id="E7v-I3-wkA"/>
@@ -2013,7 +2056,7 @@
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <systemColor name="separatorColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -22,6 +22,7 @@ class ViewController: UIViewController, ElectraUI {
     
     @IBOutlet weak var mountButton: ProgressButton!
     @IBOutlet weak var vnodeButton: ProgressButton!
+    @IBOutlet weak var restoreVnodeButton: ProgressButton!
     @IBOutlet weak var jailbreakButton: ProgressButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var vibrancyView: UIVisualEffectView!
@@ -60,6 +61,7 @@ class ViewController: UIViewController, ElectraUI {
         jailbreakButton?.setTitle("Jailbreak", for: .normal)
         mountButton?.setTitle("Mount R/W", for: .normal)
         vnodeButton?.setTitle("Vnodebypass", for: .normal)
+        restoreVnodeButton?.setTitle("Restore vnode", for: .normal)
         
         if ExploitManager.shared.chosenExploit == .nullExploit {
             jailbreakButton?.isEnabled = false
@@ -189,6 +191,23 @@ class ViewController: UIViewController, ElectraUI {
         }
     }
     
+    @IBAction func restoreVnode() {
+        restoreVnodeButton?.isEnabled = false;
+        restoreVnodeButton?.setTitle("Running Exploit", for: .normal)
+        restoreVnodeButton?.setProgress(0.5, animated: true)
+        DispatchQueue.main.async {
+            var any_proc = UInt64(0)
+            LogStream.shared.pause()
+            let ret = do_restorevnode(0x800, 0x0, 0x2, 0x2)
+            LogStream.shared.resume()
+            if ret != 0 {
+                self.restoreVnodeButton.setProgress(0, animated: true)
+                self.restoreVnodeButton.setTitle("Restore vnode success", for: .normal)
+                self.showAlert("Notification", "Restore vnode  success", sync: false)
+            }
+        }
+    }
+    
     @IBAction func vnodebypass() {
         vnodeButton?.isEnabled = false;
         vnodeButton?.setTitle("Running Exploit", for: .normal)
@@ -199,7 +218,9 @@ class ViewController: UIViewController, ElectraUI {
             let ret = do_vnodebypass(0x800, 0x0, 0x2, 0x2)
             LogStream.shared.resume()
             if ret != 0 {
+                self.vnodeButton.setProgress(0, animated: true)
                 self.showAlert("Notification", "Vnodebypass success", sync: false)
+                self.vnodeButton.setTitle("Vnodebypass success", for: .normal)
             }
         }
     }
