@@ -20,8 +20,6 @@ class ViewController: UIViewController, ElectraUI {
     
     @IBOutlet weak var stackView: UIStackView!
     
-    @IBOutlet weak var mountButton: ProgressButton!
-    @IBOutlet weak var vnodeButton: ProgressButton!
     @IBOutlet weak var jailbreakButton: ProgressButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var vibrancyView: UIVisualEffectView!
@@ -58,8 +56,6 @@ class ViewController: UIViewController, ElectraUI {
         nonceSetter.delegate = NonceManager.shared
         
         jailbreakButton?.setTitle("Jailbreak", for: .normal)
-        mountButton?.setTitle("Mount R/W", for: .normal)
-        vnodeButton?.setTitle("Vnodebypass", for: .normal)
         
         if ExploitManager.shared.chosenExploit == .nullExploit {
             jailbreakButton?.isEnabled = false
@@ -186,50 +182,6 @@ class ViewController: UIViewController, ElectraUI {
         }
         if sync {
             sem.wait()
-        }
-    }
-    
-    @IBAction func vnodebypass() {
-        vnodeButton?.isEnabled = false;
-        vnodeButton?.setTitle("Running Exploit", for: .normal)
-        vnodeButton?.setProgress(0.5, animated: true)
-        DispatchQueue.main.async {
-            var any_proc = UInt64(0)
-            LogStream.shared.pause()
-            let ret = do_vnodebypass(0x800, 0x0, 0x2, 0x2)
-            LogStream.shared.resume()
-            if ret != 0 {
-                self.showAlert("Notification", "Vnodebypass success", sync: false)
-            }
-        }
-    }
-    
-    @IBAction func mountRootFS() {
-        mountButton?.isEnabled = false;
-        mountButton?.setTitle("Running Exploit", for: .normal)
-        mountButton?.setProgress(0.5, animated: true)
-        DispatchQueue.main.async {
-            var any_proc = UInt64(0)
-            LogStream.shared.pause()
-            let ret = do_kopen(0x800, 0x0, 0x2, 0x2)
-            LogStream.shared.resume()
-            if ret != 0 {
-                any_proc = our_proc_kAddr
-                let electra = Electra(ui: self,
-                                      any_proc: any_proc,
-                                      enable_tweaks: true,
-                                      restore_rootfs: false,
-                                      nonce: "")
-                let isSuccess = electra.mountRootFS()
-                if(isSuccess){
-                    self.showAlert("Notification", "Mount R/W success", sync: false)
-                }
-                else{
-                    self.showAlert("Notification", "Mount R/W failue", sync: false)
-                }
-                self.mountButton?.setTitle("Mount R/W Success", for: .normal)
-                self.mountButton.setProgress(0, animated: true)
-            }
         }
     }
     

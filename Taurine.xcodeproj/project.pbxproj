@@ -1005,7 +1005,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B782X785N6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Taurine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1017,7 +1017,7 @@
 					"$(PROJECT_DIR)/Taurine/resources",
 				);
 				MARKETING_VERSION = "1.1.7-3";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trung.taurine;
+				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.taurine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Taurine/Taurine-Bridging-Header.h";
@@ -1035,7 +1035,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B782X785N6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Taurine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1047,7 +1047,7 @@
 					"$(PROJECT_DIR)/Taurine/resources",
 				);
 				MARKETING_VERSION = "1.1.7-3";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trung.taurine;
+				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.taurine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Taurine/Taurine-Bridging-Header.h";

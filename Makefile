@@ -10,7 +10,6 @@ all: clean
 	#cd Taurine/resources && tar -cf basebinaries.tar amfidebilitate jailbreakd jbexec pspawn_payload-stg2.dylib pspawn_payload.dylib
 	#rm -f Taurine/resources/{amfidebilitate,jailbreakd,jbexec,*.dylib}
 	xcodebuild clean build CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO PRODUCT_BUNDLE_IDENTIFIER="$(BUNDLE)" -sdk iphoneos -scheme Taurine -configuration Release -derivedDataPath build
-	ldid -STaurine/Taurine.entitlements build/Build/Products/Release-iphoneos/Taurine.app/Taurine
 	ln -sf build/Build/Products/Release-iphoneos Payload
 	rm -rf Payload/Taurine.app/Frameworks
 	zip -r9 Taurine.ipa Payload/Taurine.app
